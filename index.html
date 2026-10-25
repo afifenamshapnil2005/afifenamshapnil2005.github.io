@@ -780,7 +780,7 @@ function pageHTML(p,o){
   if(p.type==='toc')return `<div class="pg toc"><h4>Contents</h4><ol>${o.items.map(i=>`<li>${esc(i.t)}</li>`).join('')}</ol><p class="note">${esc(o.note||'')}</p><span class="no">${p.n}</span></div>`;
   if(p.type==='end')return `<div class="pg end" style="background:${o.color}"><b>${esc(o.title)}</b><span>Afif Enam Shapnil · Portfolio</span></div>`;
   if(p.type==='blank')return `<div class="pg blank">Notes<span class="no">${p.n}</span></div>`;
-  const it=p.it;return `<div class="pg"><div class="ph-wrap">${it.link?`<a href="${it.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">`:''}<img src="${it.img}" alt="${esc(it.t)}" loading="lazy">${it.link?'</a>':''}</div><div class="cap"><b>${esc(it.t)}</b><span>${esc(it.d||'')}</span></div><span class="no">${p.n}</span></div>`;
+  const it=p.it;return `<div class="pg"><div class="ph-wrap">${it.link?`<a href="${it.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">`:''}<img src="${it.img}" alt="${esc(it.t)}">${it.link?'</a>':''}</div><div class="cap"><b>${esc(it.t)}</b><span>${esc(it.d||'')}</span></div><span class="no">${p.n}</span></div>`;
 }
 function openBook(o){
   const pages=[{type:'cover'},{type:'toc'}];o.items.forEach(it=>pages.push({type:'item',it}));
